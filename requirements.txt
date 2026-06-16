@@ -1,0 +1,5 @@
+# Windows 本地 Outlook（推荐，最简单）
+pywin32>=306
+
+# Microsoft Graph API（跨平台，可选）
+msal>=1.28.0

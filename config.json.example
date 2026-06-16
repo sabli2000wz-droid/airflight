@@ -1,0 +1,12 @@
+{
+    "_注释": "Graph API 凭证（仅在不用本地 Outlook 时才需要此文件）",
+    "_步骤": [
+        "1. 去 https://portal.azure.com → App registrations → New registration",
+        "2. 平台选 Mobile and desktop applications，重定向 URI 填 https://login.microsoftonline.com/common/oauth2/nativeclient",
+        "3. API permissions → Add → Microsoft Graph → Delegated → Calendars.Read",
+        "4. 把 Application (client) ID 和 Directory (tenant) ID 填到下面",
+        "5. 把此文件重命名为 config.json"
+    ],
+    "client_id":  "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "tenant_id":  "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
