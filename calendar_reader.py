@@ -91,13 +91,12 @@ class _Win32Backend(_Backend):
 
     def get_events_in_range(self, start: datetime, end: datetime) -> list[CalendarEvent]:
         items = self._calendar.Items
-        items.IncludeRecurrences = True
         items.Sort("[Start]")
+        items.IncludeRecurrences = True
 
-        fmt = "%m/%d/%Y %H:%M %p"
-        # Outlook 过滤器用本地时间字符串
-        f_start = start.strftime("%m/%d/%Y %H:%M %p")
-        f_end   = end.strftime("%m/%d/%Y %H:%M %p")
+        # Outlook Restrict 过滤器需要用这个时间格式
+        f_start = start.strftime("%Y-%m-%d %H:%M")
+        f_end   = end.strftime("%Y-%m-%d %H:%M")
         restriction = (
             f"[Start] >= '{f_start}' AND [Start] <= '{f_end}'"
         )
